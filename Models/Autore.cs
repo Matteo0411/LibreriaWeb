@@ -30,3 +30,4 @@ namespace LibreriaWeb.Models
         public ICollection<Libro>? Libri { get; set; }
     }
 }
+
