@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using LibreriaWeb.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<LibreriaContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("LibreriaContext") ?? throw new InvalidOperationException("Connection string 'LibreriaContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
