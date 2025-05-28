@@ -4,10 +4,18 @@
 
 <div class="container">
     <!-- Hero Section -->
-    <section class="hero-section text-center py-5 bg-primary rounded-3 mb-4">
-        <h1 class="display-4">Benvenuti nella nostra Libreria</h1>
-        <p class="lead">Scopri la nostra vasta collezione di libri e autori</p>
-        <a asp-controller="Libroes" asp-action="Index" class="btn btn-primary btn-lg mt-3">Esplora i Libri</a>
+    <section class="hero-section text-center py-5 rounded-3 mb-4 text-white"
+             style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                 url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+                 background-size: cover;
+                 background-position: center;">
+        <div class="container py-5">
+            <h1 class="display-4 fw-bold">Benvenuti nella nostra Libreria</h1>
+            <p class="lead fs-4">Scopri la nostra vasta collezione di libri e autori</p>
+            <a asp-controller="Libri" asp-action="Index" class="btn btn-light btn-lg mt-3 px-4 py-2">
+                Esplora i Libri
+            </a>
+        </div>
     </section>
 
     <!-- Features Grid -->
