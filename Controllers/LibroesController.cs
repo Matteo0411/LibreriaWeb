@@ -10,11 +10,11 @@ using LibreriaWeb.Models;
 
 namespace LibreriaWeb.Controllers
 {
-    public class LibroesController : Controller
+    public class BookRecommendationService : Controller
     {
         private readonly LibreriaContext _context;
 
-        public LibroesController(LibreriaContext context)
+        public BookRecommendationService(LibreriaContext context)
         {
             _context = context;
         }
