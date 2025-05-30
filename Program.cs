@@ -8,7 +8,6 @@ builder.Services.AddDbContext<LibreriaContext>(options =>
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<IBookRecommendationService, BookRecommendationService>();
 
 var app = builder.Build();
 
