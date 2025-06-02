@@ -20,10 +20,22 @@ namespace LibreriaWeb.Controllers
         }
 
         // GET: Libroes
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            var libreriaContext = _context.Libro.Include(l => l.Autore);
-            return View(await libreriaContext.ToListAsync());
+            if (_context.Libro == null)
+            {
+                return Problem("Entity set 'MvcMovieContext.Movie'  is null.");
+            }
+
+            var movies = from m in _context.Libro
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                movies = movies.Where(s => s.Titolo!.ToUpper().Contains(searchString.ToUpper()));
+            }
+
+            return View(await movies.ToListAsync());
         }
 
         // GET: Libroes/Details/5
