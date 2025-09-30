@@ -1,8 +1,129 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Libreria Online - Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+    <!-- Hero Section -->
+    <section class="hero-section text-center py-5 rounded-3 mb-4 text-white"
+             style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                 url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+                 background-size: cover;
+                 background-position: center;">
+        <div class="container py-5">
+            <h1 class="display-4 fw-bold">Benvenuti nella nostra Libreria</h1>
+            <p class="lead fs-4">Scopri la nostra vasta collezione di libri e autori</p>
+            <a asp-controller="Libri" asp-action="Index" class="btn btn-light btn-lg mt-3 px-4 py-2">
+                Esplora i Libri
+            </a>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <div class="row g-4 mb-5">
+        <div class="col-md-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <i class="fas fa-book fa-3x text-primary mb-3"></i>
+                    <h3>Catalogo Completo</h3>
+                    <p>Oltre 10.000 titoli disponibili, dai classici alle ultime novità</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <i class="fas fa-shipping-fast fa-3x text-primary mb-3"></i>
+                    <h3>Consegna Veloce</h3>
+                    <p>Spedizione gratuita per ordini superiori a €25</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <i class="fas fa-headset fa-3x text-primary mb-3"></i>
+                    <h3>Assistenza 24/7</h3>
+                    <p>Il nostro team è sempre disponibile per aiutarti</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="contact-section bg-light p-5 rounded-3 mb-5">
+        <h2 class="text-center mb-4">Contatti e Assistenza</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h4><i class="fas fa-envelope me-2"></i>Email</h4>
+                        <p class="mb-1">Per assistenza generica:</p>
+                        <a href="mailto:assistenza@libreriaweb.it" class="d-block mb-3">assistenza@libreriaweb.it</a>
+
+                        <p class="mb-1">Per ordini commerciali:</p>
+                        <a href="mailto:ordini@libreriaweb.it" class="d-block">ordini@libreriaweb.it</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4><i class="fas fa-phone me-2"></i>Telefono</h4>
+                        <p class="mb-1">Assistenza clienti:</p>
+                        <a href="tel:+390212345678" class="d-block mb-3">+39 02 12345678</a>
+
+                        <p class="mb-1">WhatsApp:</p>
+                        <a href="https://wa.me/393331234567" class="d-block">+39 333 1234567</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Books Preview -->
+    <section class="latest-books mb-5">
+        <h2 class="text-center mb-4">Ultime Novità</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Esempio di libro - sostituisci con dati reali -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://via.placeholder.com/300x200?text=Copertina+Libro" class="card-img-top" alt="Copertina libro">
+                    <div class="card-body">
+                        <h5 class="card-title">Il Nome del Libro</h5>
+                        <p class="card-text">Breve descrizione del libro e dell'autore.</p>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <a href="#" class="btn btn-outline-primary">Dettagli</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Aggiungi altri libri qui -->
+        </div>
+    </section>
 </div>
+
+@section Styles {
+    <style>
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('https://via.placeholder.com/1200x400?text=Libreria+Online');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+        }
+
+        .card {
+            transition: transform 0.3s;
+        }
+
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+    </style>
+}
+
+@section Scripts {
+    <!-- Font Awesome per le icone -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+}

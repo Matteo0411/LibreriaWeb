@@ -1,7 +1,14 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using LibreriaWeb.Data;
+using LibreriaWeb.Controllers;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<LibreriaContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("LibreriaContext") ?? throw new InvalidOperationException("Connection string 'LibreriaContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IBookRecommendationService, BookRecommendationService>();
 
 var app = builder.Build();
 
@@ -23,5 +30,8 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+
+
 
 app.Run();
